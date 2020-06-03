@@ -1,9 +1,8 @@
 import textwrap
 
 import click
-import requests
 
-from . import __version__
+from . import __version__, wikipedia
 
 
 @click.command()
@@ -12,11 +11,7 @@ from . import __version__
 
 def main(language):
     """Python test project."""
-    API_URL = "https://" + language + ".wikipedia.org/api/rest_v1/page/random/summary"
-
-    with requests.get(API_URL) as response:
-        response.raise_for_status()
-        data = response.json()
+    data = wikipedia.random_page(language)
 
     title = data["title"]
     extract = data["extract"]
