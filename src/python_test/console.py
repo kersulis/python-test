@@ -14,7 +14,6 @@ from . import __version__, wikipedia
     metavar="LANG",
     show_default=True
 )
-
 def main(language):
     """Python test project."""
     data = wikipedia.random_page(language=language)
