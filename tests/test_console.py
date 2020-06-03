@@ -1,9 +1,8 @@
 import click.testing
 import pytest
+import requests
 
 from python_test import console
-
-import requests
 
 
 @pytest.fixture
