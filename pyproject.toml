@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "python-test"
+version = "0.1.0"
+description = "Test Python package"
+license = "MIT"
+readme = "README.md"
+authors = ["Jonas Kersulis <kersulis@umich.edu>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+click = "^7.1.2"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
