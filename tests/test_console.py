@@ -3,6 +3,8 @@ import pytest
 
 from python_test import console
 
+import requests
+
 @pytest.fixture
 def mock_requests_get(mocker):
     mock = mocker.patch("requests.get")
@@ -37,3 +39,8 @@ def test_main_fails_on_request_error(runner, mock_requests_get):
     mock_requests_get.side_effect = Exception("error")
     result = runner.invoke(console.main)
     assert result.exit_code == 1
+
+def test_main_prints_message_on_request_error(runner, mock_requests_get):
+    mock_requests_get.side_effect = requests.RequestException
+    result = runner.invoke(console.main)
+    assert "Error" in result.output
