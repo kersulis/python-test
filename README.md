@@ -6,4 +6,4 @@
 
 [![PyPI](https://img.shields.io/pypi/v/python-test.svg)](https://pypi.org/project/python-test/)
 
-[![Read the Docs](https://readthedocs.org/projects/python-test/badge/)](https://python-test.readthedocs.io/)
+[![Read the Docs](https://readthedocs.org/projects/python-test-kersulis/badge/)](https://python-test-kersulis.readthedocs.io/)
