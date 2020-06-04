@@ -1,3 +1,5 @@
+"""Noxfile with various dev sessions."""
+
 import tempfile
 from typing import Any
 

@@ -1,3 +1,5 @@
+"""Test console module."""
+
 from unittest.mock import Mock
 
 import click.testing
@@ -11,11 +13,13 @@ from python_test import console
 
 @pytest.fixture
 def runner() -> CliRunner:
+    """Click runner fixture."""
     return click.testing.CliRunner()
 
 
 @pytest.fixture
 def mock_wikipedia_random_page(mocker: MockFixture) -> Mock:
+    """Use mocker for random_page."""
     return mocker.patch("python_test.wikipedia.random_page")
 
 

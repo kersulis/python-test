@@ -1,3 +1,5 @@
+"""Test wikipedia module."""
+
 from unittest.mock import Mock
 
 import click
