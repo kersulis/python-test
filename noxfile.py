@@ -35,7 +35,7 @@ def tests(session: Session) -> None:
     session.run("pytest", *args)
 
 
-@nox.session
+@nox.session(python="3.8")
 def lint(session: Session) -> None:
     args = session.posargs or locations
     install_with_constraints(
@@ -45,6 +45,7 @@ def lint(session: Session) -> None:
         "flake8-bandit",
         "flake8-black",
         "flake8-bugbear",
+        "flake8-docstrings",
         "flake8-import-order",
     )
     session.run("flake8", *args)
