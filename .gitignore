@@ -4,3 +4,4 @@ python_test.egg-info
 .coverage
 .pytype
 docs/_build
+dist/
