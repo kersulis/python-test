@@ -9,7 +9,7 @@ from nox.sessions import Session
 
 nox.options.sessions = "lint", "mypy", "pytype", "tests"
 
-locations = "src", "tests", "noxfile.py"
+locations = "src", "tests", "noxfile.py", "docs/conf.py"
 
 package = "python_test"
 
@@ -98,3 +98,10 @@ def xdoctest(session: Session) -> None:
     session.run("poetry", "install", "--no-dev", external=True)
     install_with_constraints(session, "xdoctest")
     session.run("python", "-m", "xdoctest", package, *args)
+
+
+@nox.session(python="3.8")
+def docs(session: Session) -> None:
+    """Build the documentation with Sphinx."""
+    install_with_constraints(session, "sphinx")
+    session.run("sphinx-build", "docs", "docs/_build")
