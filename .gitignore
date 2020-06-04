@@ -2,3 +2,4 @@ __pycache__
 python_test.egg-info
 .nox
 .coverage
+.pytype
